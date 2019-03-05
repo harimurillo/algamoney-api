@@ -63,8 +63,7 @@ public class AlgamoneyExceptionHandler extends ResponseEntityExceptionHandler{
 		public Erro(String mensagemUsuario, String mensagemDesenvolvedor) {
 			super();
 			this.mensagemUsuario = mensagemUsuario;
-			this.mensagemDesenvolvedor = mensagemDesenvolvedor;
-			
+			this.mensagemDesenvolvedor = mensagemDesenvolvedor;	
 			
 		}
 
