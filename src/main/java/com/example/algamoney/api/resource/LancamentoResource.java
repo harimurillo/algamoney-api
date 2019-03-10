@@ -30,15 +30,15 @@ import com.example.algamoney.api.service.exception.PessoaInexistenteOuInativaExc
 @RestController
 @RequestMapping("/lancamentos")
 public class LancamentoResource {
+
+	@Autowired
+	private LancamentoRepository lancamentoRepository;
 	
 	@Autowired
-	public LancamentoRepository lancamentoRepository;
+	private LancamentoService lancamentoService;
 	
 	@Autowired
-	public LancamentoService lancamentoService;
-	
-	@Autowired
-	public ApplicationEventPublisher publisher;
+	private ApplicationEventPublisher publisher;
 	
 	@Autowired
 	private MessageSource messageSource;
@@ -68,5 +68,5 @@ public class LancamentoResource {
 		List<Erro> erros = Arrays.asList(new Erro(mensagemUsuario, mensagemDesenvolvedor));
 		return ResponseEntity.badRequest().body(erros);
 	}
-
+	
 }

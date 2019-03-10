@@ -13,11 +13,11 @@ public class PessoaService {
 	
 	@Autowired
 	private PessoaRepository pessoaRepository;
-	
+
 	public Pessoa atualizar(Long codigo, Pessoa pessoa) {
 		Pessoa pessoaSalva = buscarPessoaPeloCodigo(codigo);
 		
-		BeanUtils.copyProperties(pessoa, pessoaSalva, "código");
+		BeanUtils.copyProperties(pessoa, pessoaSalva, "codigo");
 		return pessoaRepository.save(pessoaSalva);
 	}
 
@@ -34,5 +34,5 @@ public class PessoaService {
 		}
 		return pessoaSalva;
 	}
-
+	
 }
